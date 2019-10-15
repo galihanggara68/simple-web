@@ -3,41 +3,47 @@
 	<head>
 		<title>Legacy Programmer</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="./style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-		<div>
-			<p id="text">Hello Text</p>
-			<p class="txt">Test Text 1</p>
-			<p class="txt">Test Text 2</p>
-			<p class="txt">Test Text 3</p>
-			<input type="text" id="ipt" />
-			<input type="text"/>
-			<input onclick="changeBackground()" type="checkbox" id="chk" value="Test" />
-			<button onclick="changeColor('yellow')">Yellow</button>
-			<button onclick="changeColor('blue')">Blue</button>
+		<div class="container">
+			<fieldset>
+			<legend>Form Sistem Parkir</legend>
+			<div class="row">
+				<div class="row">
+					<label for="plat">
+						Plat Nomer :
+						<input type="text" id="plat" />
+					</label>
+				</div>
+				<div class="row">
+					<label for="jenis">
+						Jenis Kendaraan :
+						<label for="mobil">
+							<input name="jenis" id="mobil" type="radio" value="1" />
+							Mobil
+						</label>
+						<label for="motor">
+							<input name="jenis" id="motor" type="radio" value="2" />
+							Motor
+						</label>
+					</label>
+				</div>
+				<div class="row">
+					<label for="waktu">
+						Waktu :
+						<input type="time" id="masuk"/>-<input type="time"  id="keluar"/>
+					</label>
+				</div>
+				<div class="row">
+					<button onclick="hitung()">Hitung</button>
+				</div>
+				<div class="row">
+					<textarea id="struk" rows="10" readonly></textarea>
+				</div>
+			</div>
+			</fieldset>
 		</div>
-		<script type="text/javascript">
-			text.style.color = "yellow";
-			ipt.style.border = "2px solid grey";
-			ipt.style.width = "40px";
-			
-			function changeColor(color){
-				text.style.color = color;
-			}
-			
-			// querySelector();
-			// querySelectorAll();
-			
-			let texts = document.querySelector("input[type=text]");
-			console.log(chk.checked);
-			
-			function changeBackground(){
-				if(chk.checked){
-					document.querySelector("body").style.backgroundColor = "black";
-				}else{
-					document.querySelector("body").style.backgroundColor = "white"
-				}
-			}
-		</script>
+		<script src="script.js" type="text/javascript"></script>
 	</body>
 </html>
